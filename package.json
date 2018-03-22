@@ -4,6 +4,7 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
+    "pack:win": "pkg app.js --targets win",
     "start:dev": "nodemon ./server"
   },
   "dependencies": {
