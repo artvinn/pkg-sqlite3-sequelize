@@ -9,23 +9,14 @@ var config    = require('../config/config.js')[env];
 var db        = {};
 const Todo = require("./todo");
 
-const onConnected = (sequelize) => {
-  sequelize.sync().then(function(){
-    console.log('DB connection sucessful.');
-  }, function(err){
-    // catch error here
-    console.log(err);
-  });
-}
+const sequelize = new Sequelize("db", null, null, config);
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-  onConnected(sequelize);
-} else {
-  sequelize = new Sequelize("db", null, null, config);
-  onConnected(sequelize);
-}
+sequelize
+  .sync()
+  .then(
+    () => console.log('DB connection successful'),
+    err => console.log(err)
+  )
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
