@@ -13,7 +13,7 @@ const umzug = new Umzug({
             sequelize.getQueryInterface(),
             sequelize.constructor
         ],
-        path: './server/migrations',
+        path: './migrations',
         pattern: /\.js$/
     }
 });
