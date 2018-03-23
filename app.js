@@ -2,8 +2,10 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+// first initialize db connection
 require("./src/models");
-require("./src/migrate");
+// and then migrate
+require("./migrate");
 
 const app = express();
 app.use(logger('dev'));

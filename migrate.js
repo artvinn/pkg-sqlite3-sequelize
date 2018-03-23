@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const Umzug = require("umzug");
-const sequelize = require("./models").sequelize;
+const sequelize = require("./src/models").sequelize;
 const path = require("path");
 
 const umzug = new Umzug({
