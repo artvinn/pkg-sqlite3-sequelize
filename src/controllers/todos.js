@@ -1,5 +1,4 @@
 const sequelize = require("../models").sequelize;
-var DataTypes = require('sequelize/lib/data-types');
 const Todo = require('../models').Todo;
 const TodoItem = require('../models').TodoItem;
 

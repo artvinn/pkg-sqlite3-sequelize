@@ -2,12 +2,12 @@
   "name": "pkg-test",
   "version": "1.0.0",
   "main": "app.js",
-  "bin": "bundle.js",
+  "bin": "app.js",
   "license": "MIT",
   "scripts": {
     "clean-dist": "rimraf dist/**/*",
     "copy-binaries": "copyfiles -f binaries/**/* dist/",
-    "copy-migrations": "copyfiles migrations/**/* dist/",
+    "copy-migrations": "copyfiles -f src/migrations/**/* dist/migrations",
     "copy": "yarn clean-dist && yarn copy-binaries && yarn copy-migrations",
     "pack:win": "yarn copy && pkg app.js --targets win --out-path dist/",
     "start:dev": "nodemon ./server"

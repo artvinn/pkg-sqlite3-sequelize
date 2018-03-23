@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize");
 const Umzug = require("umzug");
-const sequelize = require("./server/models").sequelize;
+const sequelize = require("./models").sequelize;
+const path = require("path");
 
 const umzug = new Umzug({
     storage: 'sequelize',
@@ -13,7 +14,7 @@ const umzug = new Umzug({
             sequelize.getQueryInterface(),
             sequelize.constructor
         ],
-        path: './migrations',
+        path: "./migrations",
         pattern: /\.js$/
     }
 });
